@@ -1,0 +1,22 @@
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        int num=0;
+        for(int i=0;i<k;i++)
+        {
+            int max=Integer.MIN_VALUE;int pos=0;
+            for(int j=0;j<nums.length;j++)
+            {
+                int cur=nums[j];
+                if(cur>max)
+                {
+                    max=cur;
+                    pos=j;
+                }
+                
+            }
+            num=max;
+            nums[pos]=Integer.MIN_VALUE;
+        }
+        return num;
+    }
+}
